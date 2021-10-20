@@ -133,6 +133,14 @@ var decrypt = ((encrypted) => {
 });
 
 
+const DeleteDocument = (document) => {
+  console.log(document);
+  fs.unlink(`./${document}`, function (err) {
+    if (err) return console.log(err);
+    console.log("file deleted successfully");
+  });
+};
+
 
 const readAndTransformAES = async () => {
     fs.readdir("./", async (err, files) => {
